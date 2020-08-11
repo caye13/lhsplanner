@@ -14,6 +14,9 @@ import FirebaseDatabase
 typealias FIRUser = FirebaseAuth.User
 
 class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,6 +24,18 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func loginButtonPushed(_ sender: UIButton) {
+        guard let authUI = FUIAuth.defaultAuthUI()
+            else { return }
+        
+        authUI.delegate = self
+
+//        let authViewController = authUI.authViewController()
+//        present(authViewController, animated: true)
+        
+    }
+    
 }
 
 extension LoginViewController: FUIAuthDelegate {
@@ -37,8 +52,8 @@ extension LoginViewController: FUIAuthDelegate {
         let userRef = Database.database().reference().child("users").child(user.uid)
         
         userRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let userDict = snapshot.value as? [String : Any] {
-                print("User already exists \(userDict.debugDescription).")
+            if let user = User(snapshot: snapshot) {
+                print("Welcome back, \(user.username).")
             } else {
                 print("New user!")
             }
