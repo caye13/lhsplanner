@@ -26,13 +26,20 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //hiding keyboard
         self.hideKeyboardWhenTappedAround()
         
         //scroll view fit with keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    //scrolling when keyboard is present
     @objc func keyboardWillShow(notification:NSNotification){
 
         let userInfo = notification.userInfo!
@@ -50,12 +57,6 @@ class LoginViewController: UIViewController {
         scrollView.contentInset = contentInset
     }
     
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     @IBAction func loginButtonPushed(_ sender: UIButton) {
         guard let authUI = FUIAuth.defaultAuthUI()
             else { return }
@@ -69,6 +70,7 @@ class LoginViewController: UIViewController {
     
 }
 
+//hiding keyboards
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
