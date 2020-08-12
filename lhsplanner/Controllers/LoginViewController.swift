@@ -26,6 +26,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+        
+        //scroll view fit with keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -47,6 +50,8 @@ class LoginViewController: UIViewController {
         scrollView.contentInset = contentInset
     }
     
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -62,20 +67,18 @@ class LoginViewController: UIViewController {
         
     }
     
-    
-//    func textFieldDidBeginEditing(emailTextField: UITextField) {
-//        scrollView.frame = CGRect(x: scrollView.frame.origin.x,
-//                                  y: scrollView.frame.origin.y,
-//                                  width: scrollView.frame.size.width,
-//                                  height: scrollView.frame.size.height - 215 + 50);
-//    }
-//    func textFieldDidEndEditing(passwordTextField: UITextField) {
-//        scrollView.frame = CGRect(x: scrollView.frame.origin.x,
-//                                  y: scrollView.frame.origin.y,
-//                                  width: scrollView.frame.size.width,
-//                                  height: scrollView.frame.size.height + 215 - 50);
-//    }
-    
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 extension LoginViewController: FUIAuthDelegate {
