@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import FirebaseDatabase.FIRDataSnapshot
 
 //class User {
 //    let uid: String
