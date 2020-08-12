@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
    
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -54,7 +55,7 @@ class LoginViewController: UIViewController {
                 })
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.performSegue(withIdentifier: "UserDetails", sender: self)
+                self.performSegue(withIdentifier: "newUser", sender: self)
             }
         }
      //sign in with textfield ui
@@ -96,12 +97,27 @@ class LoginViewController: UIViewController {
         
         authUI.delegate = self
 
-//       let authViewController = authUI.authViewController()
-//        present(authViewController, animated: true)
+       let authViewController = authUI.authViewController()
+        present(authViewController, animated: true)
         //sign in with textfield ui
-        Auth.auth().signIn(withEmail: emailTextField.text!,
-                                      password: passwordTextField.text!)
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+           if error == nil{
+             self.performSegue(withIdentifier: "loginToHome", sender: self)
+                          }
+            else{
+             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            
+              alertController.addAction(defaultAction)
+              self.present(alertController, animated: true, completion: nil)
+                 }
+        }
+//        Auth.auth().signIn(withEmail: emailTextField.text!,
+//                                      password: passwordTextField.text!)
        //sign in with text field ui
+    }
+    
+    @IBAction func signUpButtonPushed(_ sender: UIButton) {
     }
     
 }
@@ -127,17 +143,18 @@ extension LoginViewController: FUIAuthDelegate {
             return
         }
         
-        guard let user = authDataResult?.user
-            else { return }
-        
-        let userRef = Database.database().reference().child("users").child(user.uid)
-        
-        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let user = User(snapshot: snapshot) {
-                print("Welcome back, \(user.username).")
-            } else {
-                print("New user!")
-            }
-        })
+//        guard let user = authDataResult?.user
+//            else { return }
+//
+//        let userRef = Database.database().reference().child("users").child(user.uid)
+//
+//        userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
+//            if let user = User(snapshot: snapshot) {
+//                print("Welcome back, \(user.username).")
+//            } else {
+//                self.performSegue(withIdentifier: "newUser", sender: self)
+//            }
+//        })
+
     }
 }
