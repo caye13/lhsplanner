@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		601EEF0224E44BF500F64E6F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EEF0124E44BF500F64E6F /* CreateAccountViewController.swift */; };
 		6073906524E24CCE00A4DF50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6073906424E24CCE00A4DF50 /* GoogleService-Info.plist */; };
 		6073906924E24EDA00A4DF50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6073906824E24EDA00A4DF50 /* SceneDelegate.swift */; };
 		6073906B24E31DE400A4DF50 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6073906A24E31DE400A4DF50 /* User.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		4C15C2E428C85C5409146326 /* Pods-lhsplanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lhsplanner.debug.xcconfig"; path = "Target Support Files/Pods-lhsplanner/Pods-lhsplanner.debug.xcconfig"; sourceTree = "<group>"; };
 		583CACF58493C89966401E1C /* Pods-lhsplanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lhsplanner.release.xcconfig"; path = "Target Support Files/Pods-lhsplanner/Pods-lhsplanner.release.xcconfig"; sourceTree = "<group>"; };
+		601EEF0124E44BF500F64E6F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		6073906424E24CCE00A4DF50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6073906824E24EDA00A4DF50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6073906A24E31DE400A4DF50 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				60C2282324E239EC00F065CA /* ViewController.swift */,
 				60C2283F24E2401C00F065CA /* LoginViewController.swift */,
+				601EEF0124E44BF500F64E6F /* CreateAccountViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				601EEF0224E44BF500F64E6F /* CreateAccountViewController.swift in Sources */,
 				60C2284024E2401C00F065CA /* LoginViewController.swift in Sources */,
 				60C2282424E239EC00F065CA /* ViewController.swift in Sources */,
 				60C2282024E239EC00F065CA /* AppDelegate.swift in Sources */,

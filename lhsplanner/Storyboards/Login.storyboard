@@ -108,17 +108,74 @@
             <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="lwE-ot-XDB">
+        <scene sceneID="GM1-u9-css">
             <objects>
-                <viewController id="1pm-On-fCY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9sX-Qg-6Wo">
+                <viewController id="8jp-bY-qWs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pfN-oS-Lpf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Xle-hj-fV7">
+                                <rect key="frame" x="39" y="96" width="336" height="226.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5y-GC-hsw">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter school email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUr-oM-Dfx">
+                                        <rect key="frame" x="0.0" y="57.5" width="336" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="3JR-Aj-QEh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDV-Bu-rPy">
+                                        <rect key="frame" x="0.0" y="122.5" width="336" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="Guh-FC-b4r"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTd-tx-wEh">
+                                        <rect key="frame" x="0.0" y="187.5" width="336" height="39"/>
+                                        <color key="backgroundColor" red="0.53322575839999997" green="0.13499386290000001" blue="0.13499386290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="KFQ-oH-8qK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UDV-Bu-rPy" secondAttribute="trailing" id="49d-DY-tOV"/>
+                                    <constraint firstAttribute="trailing" secondItem="hUr-oM-Dfx" secondAttribute="trailing" id="7El-kr-FIJ"/>
+                                    <constraint firstItem="jTd-tx-wEh" firstAttribute="leading" secondItem="Xle-hj-fV7" secondAttribute="leading" id="ErF-3x-dyZ"/>
+                                    <constraint firstItem="m5y-GC-hsw" firstAttribute="top" secondItem="Xle-hj-fV7" secondAttribute="top" id="MtE-yW-zBU"/>
+                                    <constraint firstItem="hUr-oM-Dfx" firstAttribute="leading" secondItem="Xle-hj-fV7" secondAttribute="leading" id="Xmn-8Z-9Am"/>
+                                    <constraint firstAttribute="trailing" secondItem="m5y-GC-hsw" secondAttribute="trailing" id="c4d-4p-uCx"/>
+                                    <constraint firstAttribute="trailing" secondItem="jTd-tx-wEh" secondAttribute="trailing" id="g1C-bM-lvw"/>
+                                    <constraint firstItem="m5y-GC-hsw" firstAttribute="leading" secondItem="Xle-hj-fV7" secondAttribute="leading" id="hFa-2r-tP8"/>
+                                    <constraint firstItem="UDV-Bu-rPy" firstAttribute="leading" secondItem="Xle-hj-fV7" secondAttribute="leading" id="iVO-Ow-RK2"/>
+                                    <constraint firstItem="m5y-GC-hsw" firstAttribute="centerX" secondItem="Xle-hj-fV7" secondAttribute="centerX" id="oYj-Hy-D2x"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="tc7-de-3UH"/>
+                        <constraints>
+                            <constraint firstItem="jY0-Xh-nOf" firstAttribute="trailing" secondItem="Xle-hj-fV7" secondAttribute="trailing" constant="39" id="8cq-00-rom"/>
+                            <constraint firstItem="Xle-hj-fV7" firstAttribute="top" secondItem="jY0-Xh-nOf" secondAttribute="top" constant="52" id="aXx-Cc-9S8"/>
+                            <constraint firstItem="Xle-hj-fV7" firstAttribute="leading" secondItem="jY0-Xh-nOf" secondAttribute="leading" constant="39" id="rnv-fE-Uxv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jY0-Xh-nOf"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KDb-SP-EWu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wYw-O1-Hgc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="958" y="80"/>
         </scene>

@@ -21,10 +21,43 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+   //sign in with textfield ui
+    var ref:DatabaseReference! //created a variable ref of type firebase database reference
+    var databaseHandle:DatabaseHandle? //to handle to database listener like to stop or start it
+
+    var postdata = [String]()
+    var postall = [[String: String]]()
+    //sign in with textfield ui
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //sign in with uitextfields
+        ref = Database.database().reference()
+
+        let userRef = ref.child("Hub")
+        
+        userRef.queryOrdered(byChild: "email").observe(.value, with: { snapshot in
+
+        for child in snapshot.children {
+
+            let snap = child as! DataSnapshot
+
+            let userDict = snap.value as! [String:Any]
+
+            let userId = userDict["ID"]
+            let lastname = userDict["lastname"]
+            print("\(userId!)  \(lastname!)")
+
+
+        }
+                })
+        Auth.auth().addStateDidChangeListener() { auth, user in
+            if user != nil {
+                self.performSegue(withIdentifier: "UserDetails", sender: self)
+            }
+        }
+     //sign in with textfield ui
         
         //hiding keyboard
         self.hideKeyboardWhenTappedAround()
@@ -63,9 +96,12 @@ class LoginViewController: UIViewController {
         
         authUI.delegate = self
 
-//        let authViewController = authUI.authViewController()
+//       let authViewController = authUI.authViewController()
 //        present(authViewController, animated: true)
-        
+        //sign in with textfield ui
+        Auth.auth().signIn(withEmail: emailTextField.text!,
+                                      password: passwordTextField.text!)
+       //sign in with text field ui
     }
     
 }
