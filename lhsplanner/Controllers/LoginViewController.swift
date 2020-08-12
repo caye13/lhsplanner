@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
 
         var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height + 20
+        contentInset.bottom = keyboardFrame.size.height + 10
         scrollView.contentInset = contentInset
     }
 
