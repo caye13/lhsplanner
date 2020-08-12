@@ -15,10 +15,36 @@ typealias FIRUser = FirebaseAuth.User
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet var scrollView: UIScrollView!
+   
     @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc func keyboardWillShow(notification:NSNotification){
+
+        let userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height + 20
+        scrollView.contentInset = contentInset
+    }
+
+    @objc func keyboardWillHide(notification:NSNotification){
+
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,6 +61,20 @@ class LoginViewController: UIViewController {
 //        present(authViewController, animated: true)
         
     }
+    
+    
+//    func textFieldDidBeginEditing(emailTextField: UITextField) {
+//        scrollView.frame = CGRect(x: scrollView.frame.origin.x,
+//                                  y: scrollView.frame.origin.y,
+//                                  width: scrollView.frame.size.width,
+//                                  height: scrollView.frame.size.height - 215 + 50);
+//    }
+//    func textFieldDidEndEditing(passwordTextField: UITextField) {
+//        scrollView.frame = CGRect(x: scrollView.frame.origin.x,
+//                                  y: scrollView.frame.origin.y,
+//                                  width: scrollView.frame.size.width,
+//                                  height: scrollView.frame.size.height + 215 - 50);
+//    }
     
 }
 
