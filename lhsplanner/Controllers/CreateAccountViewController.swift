@@ -62,8 +62,8 @@ class CreateAccountViewController: UIViewController {
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
             }
-          // self.performSegue(withIdentifier: "signupToHome", sender: self)
-                        }
+
+         }
          else{
            let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
            let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)

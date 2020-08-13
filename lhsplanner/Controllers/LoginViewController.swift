@@ -104,8 +104,8 @@ class LoginViewController: UIViewController {
         
         authUI.delegate = self
 
-       let authViewController = authUI.authViewController()
-        present(authViewController, animated: true)
+        //let authViewController = authUI.authViewController()
+//        present(authViewController, animated: true)
         //sign in with textfield ui
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
            if error == nil{
@@ -119,8 +119,8 @@ class LoginViewController: UIViewController {
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
             }
-          //  self.performSegue(withIdentifier: "loginToHome", sender: self) 
-                          }
+            
+           }
             else{
              let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
              let defaultAction = UIAlertAction(title: "Retry", style: .cancel, handler: nil)
