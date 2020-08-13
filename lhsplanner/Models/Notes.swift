@@ -6,4 +6,10 @@
 //  Copyright © 2020 caye. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class Note {
+    var title = ""
+    var content = ""
+    var modificationTime = Date()
+}
