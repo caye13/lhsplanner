@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    //keeping users logged in
         
     // MARK: UISceneSession Lifecycle
 
