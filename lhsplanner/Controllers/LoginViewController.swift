@@ -53,8 +53,6 @@ class LoginViewController: UIViewController {
 
         }
                 })
-        
-        //maybe take this out
 
      //sign in with textfield ui
         
