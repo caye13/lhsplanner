@@ -111,12 +111,9 @@ class LoginViewController: UIViewController {
                 return
             }
 
-            let storyboard = UIStoryboard(name: "Main", bundle: .main)
-
-            if let initialViewController = storyboard.instantiateInitialViewController() {
-                self.view.window?.rootViewController = initialViewController
-                self.view.window?.makeKeyAndVisible()
-            }
+            let initialViewController = UIStoryboard.initialViewController(for: .main)
+            self.view.window?.rootViewController = initialViewController
+            self.view.window?.makeKeyAndVisible()
             
            }
             else{
@@ -133,7 +130,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonPushed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "signUpSegue", sender: self)
+        self.performSegue(withIdentifier: Constants.Segue.signUpSegue, sender: self)
     }
     
 }
