@@ -57,7 +57,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ced-8k-fs2">
                                 <rect key="frame" x="0.0" y="625" width="414" height="103"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wku-Yg-BWl">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wku-Yg-BWl">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="Wh8-UW-OQy"/>

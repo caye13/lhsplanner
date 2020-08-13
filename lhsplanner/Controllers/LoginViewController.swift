@@ -55,11 +55,11 @@ class LoginViewController: UIViewController {
                 })
         
         //maybe take this out
-        Auth.auth().addStateDidChangeListener() { auth, user in
-            if user != nil {
-                self.performSegue(withIdentifier: "signUpSegue", sender: self)
-            }
-        }
+//        Auth.auth().addStateDidChangeListener() { auth, user in
+//            if user != nil {
+//                self.performSegue(withIdentifier: "signUpSegue", sender: self)
+//            }
+//        }
      //sign in with textfield ui
         
         //hiding keyboard
