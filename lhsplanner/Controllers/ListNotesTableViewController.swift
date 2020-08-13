@@ -10,7 +10,11 @@ import UIKit
 
 class ListNotesTableViewController: UITableViewController {
     
-    var notes = [Note]()
+    var notes = [Note]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

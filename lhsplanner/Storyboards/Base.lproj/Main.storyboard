@@ -140,6 +140,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentTextView" destination="iJa-Cq-1vb" id="Wra-H6-ac8"/>
+                        <outlet property="titleTextField" destination="Hrp-mg-T1w" id="cRA-OO-KII"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDQ-8i-6h5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="u6l-n5-EjB" userLabel="Exit" sceneMemberID="exit"/>
