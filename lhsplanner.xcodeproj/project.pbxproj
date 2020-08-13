@@ -10,7 +10,6 @@
 		601EEF0224E44BF500F64E6F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EEF0124E44BF500F64E6F /* CreateAccountViewController.swift */; };
 		6073906524E24CCE00A4DF50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6073906424E24CCE00A4DF50 /* GoogleService-Info.plist */; };
 		6073906924E24EDA00A4DF50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6073906824E24EDA00A4DF50 /* SceneDelegate.swift */; };
-		6073906B24E31DE400A4DF50 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6073906A24E31DE400A4DF50 /* User.swift */; };
 		60C2282024E239EC00F065CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C2281F24E239EC00F065CA /* AppDelegate.swift */; };
 		60C2282424E239EC00F065CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C2282324E239EC00F065CA /* ViewController.swift */; };
 		60C2282724E239EC00F065CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60C2282524E239EC00F065CA /* Main.storyboard */; };
@@ -27,7 +26,6 @@
 		601EEF0124E44BF500F64E6F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		6073906424E24CCE00A4DF50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6073906824E24EDA00A4DF50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6073906A24E31DE400A4DF50 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		60C2281C24E239EC00F065CA /* lhsplanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lhsplanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C2281F24E239EC00F065CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60C2282324E239EC00F065CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		60C2283B24E23E3E00F065CA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6073906A24E31DE400A4DF50 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,7 +306,6 @@
 				60C2284024E2401C00F065CA /* LoginViewController.swift in Sources */,
 				60C2282424E239EC00F065CA /* ViewController.swift in Sources */,
 				60C2282024E239EC00F065CA /* AppDelegate.swift in Sources */,
-				6073906B24E31DE400A4DF50 /* User.swift in Sources */,
 				6073906924E24EDA00A4DF50 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
