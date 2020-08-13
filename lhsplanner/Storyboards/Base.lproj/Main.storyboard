@@ -63,7 +63,13 @@
                             <outlet property="delegate" destination="llv-Oy-hZF" id="MhX-8S-xLY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Lowell Planner" id="qKs-Cw-zCe"/>
+                    <navigationItem key="navigationItem" title="Lowell Planner" id="qKs-Cw-zCe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="g4p-Yx-d1R">
+                            <connections>
+                                <segue destination="S3z-41-Y3h" kind="show" identifier="addNote" id="7FT-lV-97o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g61-G0-Guc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="-575.36231884057975" y="-398.4375"/>
         </scene>
-        <!--Display Note View Controller-->
+        <!--Title-->
         <scene sceneID="8SW-RA-Y7b">
             <objects>
                 <viewController id="S3z-41-Y3h" customClass="DisplayNoteViewController" customModule="lhsplanner" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,12 +128,27 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QYi-Ri-mKI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9p9-JZ-7Kz"/>
+                    <navigationItem key="navigationItem" title="Title" id="9p9-JZ-7Kz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="igz-iD-OIM">
+                            <connections>
+                                <segue destination="u6l-n5-EjB" kind="unwind" identifier="cancel" unwindAction="unwindWithSegue:" id="WJm-3Z-vSy"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="UkY-Ys-L4t">
+                            <connections>
+                                <segue destination="u6l-n5-EjB" kind="unwind" identifier="save" unwindAction="unwindWithSegue:" id="16Y-lZ-0To"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDQ-8i-6h5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="u6l-n5-EjB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1240.5797101449277" y="-398.4375"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7FT-lV-97o"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
 </document>
