@@ -17,16 +17,22 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var enterPasswordConfirmTextField: UITextField!
     
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        setUpViews()
 
         
+    }
+    
+    //round edges for buttons
+    func setUpViews() {
+        nextButton.layer.cornerRadius = 8
+        nextButton.layer.masksToBounds = true
     }
     
     @objc override func dismissKeyboard() {

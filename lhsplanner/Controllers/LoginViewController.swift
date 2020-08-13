@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
+
         //sign in with uitextfields
         ref = Database.database().reference()
 
@@ -53,7 +55,7 @@ class LoginViewController: UIViewController {
 
         }
                 })
-
+        
      //sign in with textfield ui
         
         //hiding keyboard
@@ -63,6 +65,15 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     }
+    //round edges for buttons
+    func setupViews() {
+        loginButton.layer.cornerRadius = 13
+        loginButton.layer.masksToBounds = true
+        
+        signUpButton.layer.cornerRadius = 13
+        signUpButton.layer.masksToBounds = true
+    }
+
     
     
     override func didReceiveMemoryWarning() {
