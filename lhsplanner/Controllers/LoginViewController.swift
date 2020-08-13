@@ -67,10 +67,10 @@ class LoginViewController: UIViewController {
     }
     //round edges for buttons
     func setupViews() {
-        loginButton.layer.cornerRadius = 13
+        loginButton.layer.cornerRadius = 8
         loginButton.layer.masksToBounds = true
         
-        signUpButton.layer.cornerRadius = 13
+        signUpButton.layer.cornerRadius = 8
         signUpButton.layer.masksToBounds = true
     }
 

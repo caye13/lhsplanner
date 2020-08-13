@@ -30,7 +30,7 @@
                                         <color key="backgroundColor" red="0.53322575839999997" green="0.13499386290000001" blue="0.13499386290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
                                         <state key="normal" title="Sign up">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="signUpButtonPushed:" destination="3Ft-QA-IP4" eventType="touchUpInside" id="Hxu-qq-DKQ"/>
@@ -41,7 +41,7 @@
                                         <color key="backgroundColor" red="0.53322575839999997" green="0.13499386290000001" blue="0.13499386290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
                                         <state key="normal" title="Login">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="loginButtonPushed:" destination="3Ft-QA-IP4" eventType="touchUpInside" id="psS-UG-RMZ"/>
@@ -80,7 +80,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ced-8k-fs2" firstAttribute="leading" secondItem="PUW-it-951" secondAttribute="leading" id="4tp-Qy-AIp"/>
                             <constraint firstItem="dbf-wa-85W" firstAttribute="leading" secondItem="PUW-it-951" secondAttribute="leading" id="50Q-m3-3oX"/>
@@ -162,7 +162,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
                                         <state key="normal" title="Next">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="nextButtonPushed:" destination="8jp-bY-qWs" eventType="touchUpInside" id="Fre-IO-TlD"/>
@@ -185,7 +185,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jY0-Xh-nOf" firstAttribute="trailing" secondItem="Xle-hj-fV7" secondAttribute="trailing" constant="39" id="8cq-00-rom"/>
                             <constraint firstItem="Xle-hj-fV7" firstAttribute="top" secondItem="jY0-Xh-nOf" secondAttribute="top" constant="52" id="aXx-Cc-9S8"/>
