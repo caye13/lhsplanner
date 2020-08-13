@@ -23,8 +23,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
    //sign in with textfield ui
-    var ref:DatabaseReference! //created a variable ref of type firebase database reference
-    var databaseHandle:DatabaseHandle? //to handle to database listener like to stop or start it
+    var ref: DatabaseReference!
+    var databaseHandle: DatabaseHandle?
 
     var postdata = [String]()
     var postall = [[String: String]]()
