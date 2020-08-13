@@ -106,7 +106,7 @@
                         <outlet property="passwordTextField" destination="2iN-3a-tPo" id="tEM-Ty-ar6"/>
                         <outlet property="scrollView" destination="Nlx-KK-5Qy" id="L0J-O1-isA"/>
                         <outlet property="signUpButton" destination="Dbs-hW-Qbt" id="zaC-SG-TeG"/>
-                        <segue destination="8jp-bY-qWs" kind="show" identifier="newUser" id="0xF-g5-TvQ"/>
+                        <segue destination="8jp-bY-qWs" kind="show" identifier="signUpSegue" id="0xF-g5-TvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmb-p6-iqM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -53,9 +53,11 @@ class LoginViewController: UIViewController {
 
         }
                 })
+        
+        //maybe take this out
         Auth.auth().addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.performSegue(withIdentifier: "newUser", sender: self)
+                self.performSegue(withIdentifier: "signUpSegue", sender: self)
             }
         }
      //sign in with textfield ui
@@ -118,7 +120,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonPushed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "newUser", sender: self)
+        self.performSegue(withIdentifier: "signUpSegue", sender: self)
     }
     
 }
