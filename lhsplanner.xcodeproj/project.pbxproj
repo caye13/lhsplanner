@@ -72,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				60C2281F24E239EC00F065CA /* AppDelegate.swift */,
+				6073906824E24EDA00A4DF50 /* SceneDelegate.swift */,
 				60C2283C24E23E4800F065CA /* Services */,
 				60C2283B24E23E3E00F065CA /* Models */,
 				60C2283A24E23E3700F065CA /* Controllers */,
@@ -81,7 +82,6 @@
 				60C2282824E239EF00F065CA /* Assets.xcassets */,
 				60C2283624E23E0E00F065CA /* Extensions */,
 				60C2283524E23E0200F065CA /* Supporting Files */,
-				6073906824E24EDA00A4DF50 /* SceneDelegate.swift */,
 			);
 			path = lhsplanner;
 			sourceTree = "<group>";

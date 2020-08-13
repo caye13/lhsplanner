@@ -109,7 +109,17 @@ class LoginViewController: UIViewController {
         //sign in with textfield ui
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
            if error == nil{
-             self.performSegue(withIdentifier: "loginToHome", sender: self)
+            guard let _ = user else {
+                return
+            }
+
+            let storyboard = UIStoryboard(name: "Main", bundle: .main)
+
+            if let initialViewController = storyboard.instantiateInitialViewController() {
+                self.view.window?.rootViewController = initialViewController
+                self.view.window?.makeKeyAndVisible()
+            }
+          //  self.performSegue(withIdentifier: "loginToHome", sender: self) 
                           }
             else{
              let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)

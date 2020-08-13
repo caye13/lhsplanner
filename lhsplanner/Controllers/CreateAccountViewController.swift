@@ -51,7 +51,18 @@ class CreateAccountViewController: UIViewController {
         else{
         Auth.auth().createUser(withEmail: enterEmailTextField.text!, password: enterPasswordTextField.text!){ (user, error) in
          if error == nil {
-           self.performSegue(withIdentifier: "signupToHome", sender: self)
+            //go to main view controller
+            guard let _ = user else {
+                return
+            }
+
+            let storyboard = UIStoryboard(name: "Main", bundle: .main)
+
+            if let initialViewController = storyboard.instantiateInitialViewController() {
+                self.view.window?.rootViewController = initialViewController
+                self.view.window?.makeKeyAndVisible()
+            }
+          // self.performSegue(withIdentifier: "signupToHome", sender: self)
                         }
          else{
            let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
