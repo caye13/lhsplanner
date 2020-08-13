@@ -74,27 +74,6 @@ class CreateAccountViewController: UIViewController {
                     }
               }
         
-        
-//        guard let firUser = Auth.auth().currentUser,
-//            let emailname = enterEmailTextField.text,
-//            !emailname.isEmpty else { return }
-//
-//        let userAttrs = ["email": emailname]
-//
-//        let ref = Database.database().reference().child("users").child(firUser.uid)
-//
-//        ref.setValue(userAttrs) { (error, ref) in
-//            if let error = error {
-//                assertionFailure(error.localizedDescription)
-//                return
-//            }
-//
-//            ref.observeSingleEvent(of: .value, with: { (snapshot) in
-//                let user = User(snapshot: snapshot)
-//
-//                // handle newly created user here
-//            })
-//        }
     }
     
 }

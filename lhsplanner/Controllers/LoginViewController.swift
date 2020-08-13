@@ -103,9 +103,7 @@ class LoginViewController: UIViewController {
             else { return }
         
         authUI.delegate = self
-
-        //let authViewController = authUI.authViewController()
-//        present(authViewController, animated: true)
+        
         //sign in with textfield ui
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
            if error == nil{
@@ -160,19 +158,6 @@ extension LoginViewController: FUIAuthDelegate {
             assertionFailure("Error signing in: \(error.localizedDescription)")
             return
         }
-        
-//        guard let user = authDataResult?.user
-//            else { return }
-//
-//        let userRef = Database.database().reference().child("users").child(user.uid)
-//
-//        userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
-//            if let user = User(snapshot: snapshot) {
-//                print("Welcome back, \(user.username).")
-//            } else {
-//                self.performSegue(withIdentifier: "newUser", sender: self)
-//            }
-//        })
 
     }
 }
