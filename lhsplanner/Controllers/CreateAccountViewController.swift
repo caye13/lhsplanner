@@ -76,9 +76,15 @@ class CreateAccountViewController: UIViewController {
             !email.isEmpty else { return }
 
         UserService.create(firUser, email: email) { (user) in
-            guard let user = user else { return }
+        guard let user = user else {
+            return
+        }
 
-            print("Created new user: \(user.email)")
+        User.setCurrent(user, writeToUserDefaults: true)
+
+            let initialViewController = UIStoryboard.initialViewController(for: .main)
+            self.view.window?.rootViewController = initialViewController
+            self.view.window?.makeKeyAndVisible()
         }
         
     }

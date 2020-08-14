@@ -123,25 +123,25 @@ class LoginViewController: UIViewController {
 //
         //sign in with textfield ui
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-           if error == nil{
+            if error == nil{
             guard let _ = user else {
                 return
-                
+
             }
-//
-//            let initialViewController = UIStoryboard.initialViewController(for: .main)
-//            self.view.window?.rootViewController = initialViewController
-//            self.view.window?.makeKeyAndVisible()
-//
+
+            let initialViewController = UIStoryboard.initialViewController(for: .main)
+            self.view.window?.rootViewController = initialViewController
+            self.view.window?.makeKeyAndVisible()
+
           }
-//            else{
-//             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-//             let defaultAction = UIAlertAction(title: "Retry", style: .cancel, handler: nil)
-//
-//              alertController.addAction(defaultAction)
-//              self.present(alertController, animated: true, completion: nil)
+            else{
+             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+             let defaultAction = UIAlertAction(title: "Retry", style: .cancel, handler: nil)
+
+              alertController.addAction(defaultAction)
+              self.present(alertController, animated: true, completion: nil)
         }
-//             }
+             }
         
         
 //        Auth.auth().signIn(withEmail: emailTextField.text!,
@@ -180,15 +180,20 @@ extension LoginViewController: FUIAuthDelegate {
         let userRef = Database.database().reference().child("users").child(user.uid)
         userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
             if let user = User(snapshot: snapshot) {
-                User.setCurrent(user)
-                
+                UserService.show(forUID: user.uid) { (user) in
+                if let user = user {
+                User.setCurrent(user, writeToUserDefaults: true)
+               
                 let initialViewController = UIStoryboard.initialViewController(for: .main)
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
-                
-            } else {
-                self.performSegue(withIdentifier: Constants.Segue.signUpSegue, sender: self)
-            }
+                }
+                    
+//                } else {
+//                self.performSegue(withIdentifier: Constants.Segue.signUpSegue, sender: self)
+    
+                }
+        }
         })
     }
 }
