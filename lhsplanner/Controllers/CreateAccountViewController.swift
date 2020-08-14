@@ -42,49 +42,50 @@ class CreateAccountViewController: UIViewController {
     @IBAction func nextButtonPushed(_ sender: UIButton) {
         
         if enterPasswordTextField.text != enterPasswordConfirmTextField.text {
-        let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type password", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
-                    
-        alertController.addAction(defaultAction)
-        self.present(alertController, animated: true, completion: nil)
-                }
-        else{
-        Auth.auth().createUser(withEmail: enterEmailTextField.text!, password: enterPasswordTextField.text!){ (user, error) in
-         if error == nil {
-            //go to main view controller
-            guard let _ = user else {
-                return
-            }
-            guard let firUser = Auth.auth().currentUser,
-                let email = self.enterEmailTextField.text,
-                !email.isEmpty else { return }
-
-            UserService.create(firUser, email: email) { (user) in
-            guard let user = user else {
-                return
-            }
-
-            User.setCurrent(user, writeToUserDefaults: true)
-
-                let initialViewController = UIStoryboard.initialViewController(for: .main)
-                self.view.window?.rootViewController = initialViewController
-                self.view.window?.makeKeyAndVisible()
-            }
-
-//            let initialViewController = UIStoryboard.initialViewController(for: .main)
-//            self.view.window?.rootViewController = initialViewController
-//            self.view.window?.makeKeyAndVisible()
-
-         }
-         else{
-           let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-           let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
-                            
+            // alert if pass is wrong
+            let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type password", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+                        
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
-         }
+            
+        } else {
+            
+            Auth.auth().createUser(withEmail: enterEmailTextField.text!, password: enterPasswordTextField.text!){ (user, error) in
+                if error == nil {
+                    //go to main view controller
+                    guard let _ = user else {
+                        return
+                    }
+                    guard let firUser = Auth.auth().currentUser,
+                        let email = self.enterEmailTextField.text,
+                        !email.isEmpty else { return }
+
+                    UserService.create(firUser, email: email) { (user) in
+                        guard let user = user else {
+                            return
+                        }
+
+                        User.setCurrent(user, writeToUserDefaults: true)
+
+                        let initialViewController = UIStoryboard.initialViewController(for: .main)
+                        self.view.window?.rootViewController = initialViewController
+                        self.view.window?.makeKeyAndVisible()
+                    }
+
+    //            let initialViewController = UIStoryboard.initialViewController(for: .main)
+    //            self.view.window?.rootViewController = initialViewController
+    //            self.view.window?.makeKeyAndVisible()
+
+                } else{
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+                                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
-            }
+        }
                 
     }
     

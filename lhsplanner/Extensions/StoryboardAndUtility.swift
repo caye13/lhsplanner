@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIStoryboard {
-    enum LHSType: String {
+    enum StoryType: String {
         case main
         case login
 
@@ -18,11 +18,11 @@ extension UIStoryboard {
         }
     }
     
-    convenience init(type: LHSType, bundle: Bundle? = nil) {
+    convenience init(type: StoryType, bundle: Bundle? = nil) {
         self.init(name: type.filename, bundle: bundle)
     }
     
-    static func initialViewController(for type: LHSType) -> UIViewController {
+    static func initialViewController(for type: StoryType) -> UIViewController {
         let storyboard = UIStoryboard(type: type)
         guard let initialViewController = storyboard.instantiateInitialViewController() else {
             fatalError("Couldn't instantiate initial view controller for \(type.filename) storyboard.")

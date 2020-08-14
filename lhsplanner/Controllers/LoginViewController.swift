@@ -34,29 +34,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
-
-        //sign in with uitextfields
-//        ref = Database.database().reference()
-
-//        let userRef = ref.child("Hub")
-        
-//        userRef.queryOrdered(byChild: "email").observe(.value, with: { snapshot in
-
-//        for child in snapshot.children {
-//
-//            let snap = child as! DataSnapshot
-//
-//            let userDict = snap.value as! [String:Any]
-//
-//            let userId = userDict["ID"]
-//            let lastname = userDict["lastname"]
-//            print("\(userId!)  \(lastname!)")
-//
-//
-//        }
-//                })
-//
-     //sign in with textfield ui
         
         //hiding keyboard
         self.hideKeyboardWhenTappedAround()
@@ -100,54 +77,25 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonPushed(_ sender: UIButton) {
         
-        guard let firUser = Auth.auth().currentUser,
-        let email = emailTextField.text,
-        !email.isEmpty else { return }
-        
-        let userAttrs = ["email": email]
-        let ref = Database.database().reference().child("users").child(firUser.uid)
-        ref.setValue(userAttrs) { (error, ref) in
-        if let error = error {
-            assertionFailure(error.localizedDescription)
-            return
-        }
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                let user = User(snapshot: snapshot)
-            })
-        }
-//        guard let authUI = FUIAuth.defaultAuthUI()
-//             else { return }
-//
-//         authUI.delegate = self
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+            
           //sign in with textfield ui
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-
-            if error == nil{
-            guard let user = user else {
-                return
-
-            }
-                let initialViewController = UIStoryboard.initialViewController(for: .main)
-                self.view.window?.rootViewController = initialViewController
-                self.view.window?.makeKeyAndVisible()
+        Auth.auth().signIn(withEmail: email, password: password) { (authData, error) in
+            if error == nil {
                 
-          }
-            else{
-             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-             let defaultAction = UIAlertAction(title: "Retry", style: .cancel, handler: nil)
+                self.authUI(didSignInWith: authData, error: error)
+                
+            } else {
+                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Retry", style: .cancel, handler: nil)
 
-              alertController.addAction(defaultAction)
-              self.present(alertController, animated: true, completion: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+
         }
-
-             }
         
-        guard let authUI = FUIAuth.defaultAuthUI()
-                  else { return }
-                  authUI.delegate = self
-
-        Auth.auth().signIn(withEmail: emailTextField.text!,
-                                      password: passwordTextField.text!)
     }
     
     @IBAction func signUpButtonPushed(_ sender: UIButton) {
@@ -169,30 +117,32 @@ extension UIViewController {
     }
 }
 
-extension LoginViewController: FUIAuthDelegate {
-    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+extension LoginViewController {
+    func authUI(didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         
-//        if let error = error {
-//            assertionFailure("Error signing in: \(error.localizedDescription)")
-//            let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-//
-//            return
-//        }
-        guard let user = authDataResult?.user
-            else { return }
-                let userRef = Database.database().reference().child("users").child(user.uid)
-                userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
-                if let user = User(snapshot: snapshot) {
-                    UserService.show(forUID: user.uid) { (user) in
-                if let user = user {
-                    User.setCurrent(user, writeToUserDefaults: true)
-                    let initialViewController = UIStoryboard.initialViewController(for: .main)
-                    self.view.window?.rootViewController = initialViewController
-                    self.view.window?.makeKeyAndVisible()
+        if let error = error {
+            assertionFailure("Error signing in: \(error.localizedDescription)")
+            let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+            self.present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        guard let user = authDataResult?.user else { return }
+        
+        let userRef = Database.database().reference().child("users").child(user.uid)
+        
+        userRef.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
+            
+            if let user = User(snapshot: snapshot) {
+                UserService.show(forUID: user.uid) { (user) in
+                    if let user = user {
+                        // saves User on phone through user defaults
+                        User.setCurrent(user, writeToUserDefaults: true)
+                        
+                        let initialViewController = UIStoryboard.initialViewController(for: .main)
+                        self?.view.window?.rootViewController = initialViewController
+                        self?.view.window?.makeKeyAndVisible()
                     }
-//            } else {
-//            self.performSegue(withIdentifier: Constants.Segue.signUpSegue, sender: self)
-                
                 }
             }
         })
