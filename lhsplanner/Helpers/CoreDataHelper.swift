@@ -20,4 +20,37 @@ struct CoreDataHelper {
 
         return context
     }()
+    
+    static func newNote() -> Note {
+            let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context) as! Note
+
+            return note
+    }
+    
+    static func saveNote() {
+        do {
+            try context.save()
+        } catch let error {
+            print("Could not save \(error.localizedDescription)")
+        }
+    }
+    
+    static func delete(note: Note) {
+        context.delete(note)
+
+        saveNote()
+    }
+    
+    static func retrieveNotes() -> [Note] {
+        do {
+            let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
+            let results = try context.fetch(fetchRequest)
+
+            return results
+        } catch let error {
+            print("Could not fetch \(error.localizedDescription)")
+
+            return []
+        }
+    }
 }
