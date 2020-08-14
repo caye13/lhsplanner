@@ -16,18 +16,18 @@ class DisplayNoteViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
     
-    func noteNote() {
-        let title = titleTextField.text
-        let content = contentTextView.text
-        
-        let noteNote: [String : AnyObject] = ["title": title as AnyObject,
-                                           "content": content as AnyObject]
-        
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
-        ref.child("Sightings").childByAutoId().setValue(noteNote)
-
-    }
+//    func saveNote() {
+//        let title = titleTextField.text
+//        let content = contentTextView.text
+//
+//        let note: [String? : String?] = ["title": title,
+//                                           "content": content]
+//
+//        var ref: DatabaseReference!
+//        ref = Database.database().reference()
+//        ref.child("notes").childByAutoId().setValue(note)
+//
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class DisplayNoteViewController: UIViewController {
             
             destination.notes.append(note)
             
-            noteNote()
+//            saveNote()
             
         case "cancel":
             print("cancel bar button item tapped")
