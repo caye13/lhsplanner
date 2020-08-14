@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseUI
 import FirebaseDatabase
 
 class CreateAccountViewController: UIViewController {
@@ -70,8 +71,37 @@ class CreateAccountViewController: UIViewController {
             }
             }
         
+        guard let firUser = Auth.auth().currentUser,
+            let email = enterEmailTextField.text,
+            !email.isEmpty else { return }
+
+        UserService.create(firUser, email: email) { (user) in
+            guard let user = user else { return }
+
+            print("Created new user: \(user.email)")
+        }
+        
     }
     
+}
+
+extension CreateAccountViewController: FUIAuthDelegate {
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        if let error = error {
+            assertionFailure("Error signing in: \(error.localizedDescription)")
+            return
+        }
+        guard let user = authDataResult?.user
+            else { return }
+        let userRef = Database.database().reference().child("users").child(user.uid)
+        userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
+            if let user = User(snapshot: snapshot) {
+                print("Welcome, \(user.email).")
+            } else {
+                print("error")
+            }
+        })
+    }
 }
 
 

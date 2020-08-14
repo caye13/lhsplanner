@@ -36,26 +36,26 @@ class LoginViewController: UIViewController {
         setupViews()
 
         //sign in with uitextfields
-        ref = Database.database().reference()
+//        ref = Database.database().reference()
 
-        let userRef = ref.child("Hub")
+//        let userRef = ref.child("Hub")
         
-        userRef.queryOrdered(byChild: "email").observe(.value, with: { snapshot in
+//        userRef.queryOrdered(byChild: "email").observe(.value, with: { snapshot in
 
-        for child in snapshot.children {
-
-            let snap = child as! DataSnapshot
-
-            let userDict = snap.value as! [String:Any]
-
-            let userId = userDict["ID"]
-            let lastname = userDict["lastname"]
-            print("\(userId!)  \(lastname!)")
-
-
-        }
-                })
-        
+//        for child in snapshot.children {
+//
+//            let snap = child as! DataSnapshot
+//
+//            let userDict = snap.value as! [String:Any]
+//
+//            let userId = userDict["ID"]
+//            let lastname = userDict["lastname"]
+//            print("\(userId!)  \(lastname!)")
+//
+//
+//        }
+//                })
+//
      //sign in with textfield ui
         
         //hiding keyboard
@@ -115,18 +115,6 @@ class LoginViewController: UIViewController {
                 let user = User(snapshot: snapshot)
             })
         }
-        
-        UserService.create(firUser, email: email) { (user) in
-        guard let user = user else {
-            return
-        }
-            
-        User.setCurrent(user)
-            
-        let initialViewController = UIStoryboard.initialViewController(for: .main)
-        self.view.window?.rootViewController = initialViewController
-        self.view.window?.makeKeyAndVisible()
-        }
         //
 //        guard let authUI = FUIAuth.defaultAuthUI()
 //            else { return }
@@ -134,25 +122,26 @@ class LoginViewController: UIViewController {
 //        authUI.delegate = self
 //
         //sign in with textfield ui
-//        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-//           if error == nil{
-//            guard let _ = user else {
-//                return
-//            }
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+           if error == nil{
+            guard let _ = user else {
+                return
+                
+            }
 //
 //            let initialViewController = UIStoryboard.initialViewController(for: .main)
 //            self.view.window?.rootViewController = initialViewController
 //            self.view.window?.makeKeyAndVisible()
 //
-//           }
+          }
 //            else{
 //             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
 //             let defaultAction = UIAlertAction(title: "Retry", style: .cancel, handler: nil)
 //
 //              alertController.addAction(defaultAction)
 //              self.present(alertController, animated: true, completion: nil)
-//                 }
-//        }
+        }
+//             }
         
         
 //        Auth.auth().signIn(withEmail: emailTextField.text!,
