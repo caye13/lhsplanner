@@ -13,7 +13,6 @@ class User {
     let uid: String
     let email: String
 
-
     init(uid: String, email: String) {
         self.uid = uid
         self.email = email
@@ -26,5 +25,17 @@ class User {
 
         self.uid = snapshot.key
         self.email = email
+    }
+    
+    private static var _current: User?
+    
+    static var current: User {
+        guard let currentUser = _current else {
+            fatalError("Error: current user doesn't exist")
+        }
+        return currentUser
+    }
+    static func setCurrent(_ user: User) {
+        _current = user
     }
 }

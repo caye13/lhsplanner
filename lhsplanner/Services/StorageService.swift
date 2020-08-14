@@ -19,4 +19,4 @@ import FirebaseDatabase
 //    private static func uploadNotes(for notes: Note, at reference: StorageReference, success: @escaping (String) -> Void) {
 //
 //    }
-}
+
