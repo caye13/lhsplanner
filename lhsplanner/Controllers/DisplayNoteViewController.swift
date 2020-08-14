@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class DisplayNoteViewController: UIViewController {
     
@@ -31,6 +32,12 @@ class DisplayNoteViewController: UIViewController {
             note?.content = contentTextView.text ?? ""
 
             destination.tableView.reloadData()
+            
+            var ref: DatabaseReference!
+            
+            ref = Database.database().reference()
+            ref.child("Sightings").childByAutoId().setValue(prepare)
+
         case "save" where note == nil:
             let note = Note()
             note.title = titleTextField.text ?? ""

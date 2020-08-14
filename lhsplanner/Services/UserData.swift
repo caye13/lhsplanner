@@ -1,14 +1,15 @@
-////
-////  UserData.swift
-////  lhsplanner
-////
-////  Created by Caye on 8/13/20.
-////  Copyright © 2020 caye. All rights reserved.
-////
 //
-//import Foundation
-//import FirebaseDatabase.FIRDataSnapshot
+//  UserData.swift
+//  lhsplanner
 //
+//  Created by Caye on 8/13/20.
+//  Copyright © 2020 caye. All rights reserved.
+//
+
+import UIKit
+import FirebaseDatabase.FIRDataSnapshot
+
+
 //
 //class UserData: Codable {
 //

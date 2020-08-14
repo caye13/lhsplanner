@@ -8,11 +8,15 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseDatabase
 
+let data = Data()
 let storage = Storage.storage()
 let storageRef = storage.reference()
-let notesRef = storageRef.child("notes")
+let database = Database.database()
 
 struct StorageService {
-    
+    private static func uploadNotes(for notes: Note, at reference: StorageReference, success: @escaping (String) -> Void) {
+        
+    }
 }

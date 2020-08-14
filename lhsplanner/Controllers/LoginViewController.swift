@@ -30,7 +30,6 @@ class LoginViewController: UIViewController {
     var postall = [[String: String]]()
     //sign in with textfield ui
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
