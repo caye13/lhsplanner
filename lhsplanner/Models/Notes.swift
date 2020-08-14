@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class Note {
     var title = ""
     var content = ""
     var modificationTime = Date()
+
 }
