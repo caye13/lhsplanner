@@ -22,13 +22,13 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
    //sign in with textfield ui
-    var ref: DatabaseReference!
-    var databaseHandle: DatabaseHandle?
-
-    var postdata = [String]()
-    var postall = [[String: String]]()
-    //sign in with textfield ui
+//    var ref: DatabaseReference!
+//    var databaseHandle: DatabaseHandle?
+//
+//    var postdata = [String]()
+//    var postall = [[String: String]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,20 +115,21 @@ class LoginViewController: UIViewController {
                 let user = User(snapshot: snapshot)
             })
         }
+        
         //
-//        guard let authUI = FUIAuth.defaultAuthUI()
-//            else { return }
-//
-//        authUI.delegate = self
+        guard let authUI = FUIAuth.defaultAuthUI()
+            else { return }
+
+        authUI.delegate = self
 //
         //sign in with textfield ui
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+
             if error == nil{
             guard let _ = user else {
                 return
 
             }
-
             let initialViewController = UIStoryboard.initialViewController(for: .main)
             self.view.window?.rootViewController = initialViewController
             self.view.window?.makeKeyAndVisible()
@@ -142,11 +143,10 @@ class LoginViewController: UIViewController {
               self.present(alertController, animated: true, completion: nil)
         }
              }
-        
-        
-//        Auth.auth().signIn(withEmail: emailTextField.text!,
-//                                      password: passwordTextField.text!)
-       //sign in with text field ui
+
+
+        Auth.auth().signIn(withEmail: emailTextField.text!,
+                                      password: passwordTextField.text!)
     }
     
     @IBAction func signUpButtonPushed(_ sender: UIButton) {

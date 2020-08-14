@@ -55,10 +55,25 @@ class CreateAccountViewController: UIViewController {
             guard let _ = user else {
                 return
             }
+            guard let firUser = Auth.auth().currentUser,
+                let email = self.enterEmailTextField.text,
+                !email.isEmpty else { return }
 
-            let initialViewController = UIStoryboard.initialViewController(for: .main)
-            self.view.window?.rootViewController = initialViewController
-            self.view.window?.makeKeyAndVisible()
+            UserService.create(firUser, email: email) { (user) in
+            guard let user = user else {
+                return
+            }
+
+            User.setCurrent(user, writeToUserDefaults: true)
+
+                let initialViewController = UIStoryboard.initialViewController(for: .main)
+                self.view.window?.rootViewController = initialViewController
+                self.view.window?.makeKeyAndVisible()
+            }
+
+//            let initialViewController = UIStoryboard.initialViewController(for: .main)
+//            self.view.window?.rootViewController = initialViewController
+//            self.view.window?.makeKeyAndVisible()
 
          }
          else{
@@ -70,23 +85,7 @@ class CreateAccountViewController: UIViewController {
          }
             }
             }
-        
-        guard let firUser = Auth.auth().currentUser,
-            let email = enterEmailTextField.text,
-            !email.isEmpty else { return }
-
-        UserService.create(firUser, email: email) { (user) in
-        guard let user = user else {
-            return
-        }
-
-        User.setCurrent(user, writeToUserDefaults: true)
-
-            let initialViewController = UIStoryboard.initialViewController(for: .main)
-            self.view.window?.rootViewController = initialViewController
-            self.view.window?.makeKeyAndVisible()
-        }
-        
+                
     }
     
 }
