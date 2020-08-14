@@ -190,15 +190,15 @@ extension LoginViewController: FUIAuthDelegate {
             else { return }
         let userRef = Database.database().reference().child("users").child(user.uid)
         userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
-            if let _ = User(snapshot: snapshot) {
-      //          User.setCurrent(user)
+            if let user = User(snapshot: snapshot) {
+                User.setCurrent(user)
                 
                 let initialViewController = UIStoryboard.initialViewController(for: .main)
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
                 
             } else {
-                self.performSegue(withIdentifier: "signUpSegue", sender: self)
+                self.performSegue(withIdentifier: Constants.Segue.signUpSegue, sender: self)
             }
         })
     }
