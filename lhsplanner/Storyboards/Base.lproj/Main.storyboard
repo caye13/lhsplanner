@@ -112,7 +112,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="iJa-Cq-1vb">
-                                <rect key="frame" x="13" y="139" width="388" height="710"/>
+                                <rect key="frame" x="26" y="144" width="362" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -125,9 +125,9 @@
                             <constraint firstItem="QYi-Ri-mKI" firstAttribute="bottom" secondItem="iJa-Cq-1vb" secondAttribute="bottom" constant="13" id="7zn-a8-49C"/>
                             <constraint firstItem="QYi-Ri-mKI" firstAttribute="trailing" secondItem="Hrp-mg-T1w" secondAttribute="trailing" constant="13" id="8JT-4b-hB6"/>
                             <constraint firstItem="Hrp-mg-T1w" firstAttribute="leading" secondItem="QYi-Ri-mKI" secondAttribute="leading" constant="13" id="PbQ-35-2u2"/>
-                            <constraint firstItem="iJa-Cq-1vb" firstAttribute="leading" secondItem="QYi-Ri-mKI" secondAttribute="leading" constant="13" id="ScB-Pn-SRf"/>
-                            <constraint firstItem="QYi-Ri-mKI" firstAttribute="trailing" secondItem="iJa-Cq-1vb" secondAttribute="trailing" constant="13" id="fJP-SV-eZ8"/>
-                            <constraint firstItem="iJa-Cq-1vb" firstAttribute="top" secondItem="Hrp-mg-T1w" secondAttribute="bottom" constant="8" id="i8f-P1-faQ"/>
+                            <constraint firstItem="iJa-Cq-1vb" firstAttribute="leading" secondItem="QYi-Ri-mKI" secondAttribute="leading" constant="26" id="ScB-Pn-SRf"/>
+                            <constraint firstItem="QYi-Ri-mKI" firstAttribute="trailing" secondItem="iJa-Cq-1vb" secondAttribute="trailing" constant="26" id="fJP-SV-eZ8"/>
+                            <constraint firstItem="iJa-Cq-1vb" firstAttribute="top" secondItem="Hrp-mg-T1w" secondAttribute="bottom" constant="13" id="i8f-P1-faQ"/>
                             <constraint firstItem="Hrp-mg-T1w" firstAttribute="top" secondItem="QYi-Ri-mKI" secondAttribute="top" constant="8" id="qLl-2y-qUU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QYi-Ri-mKI"/>

@@ -99,6 +99,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPushed(_ sender: UIButton) {
+        guard let authUI = FUIAuth.defaultAuthUI()
+             else { return }
+
+         authUI.delegate = self
         
         guard let firUser = Auth.auth().currentUser,
         let email = emailTextField.text,
@@ -115,38 +119,34 @@ class LoginViewController: UIViewController {
                 let user = User(snapshot: snapshot)
             })
         }
-        
-        //
-        guard let authUI = FUIAuth.defaultAuthUI()
-            else { return }
-
-        authUI.delegate = self
+ 
 //
         //sign in with textfield ui
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-
-            if error == nil{
-            guard let _ = user else {
-                return
-
-            }
-            let initialViewController = UIStoryboard.initialViewController(for: .main)
-            self.view.window?.rootViewController = initialViewController
-            self.view.window?.makeKeyAndVisible()
-
-          }
-            else{
-             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-             let defaultAction = UIAlertAction(title: "Retry", style: .cancel, handler: nil)
-
-              alertController.addAction(defaultAction)
-              self.present(alertController, animated: true, completion: nil)
-        }
-             }
-
-
-        Auth.auth().signIn(withEmail: emailTextField.text!,
-                                      password: passwordTextField.text!)
+//        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+//
+//            if error == nil{
+//            guard let user = user else {
+//                return
+//
+//            }
+//            let initialViewController = UIStoryboard.initialViewController(for: .main)
+//            self.view.window?.rootViewController = initialViewController
+//            self.view.window?.makeKeyAndVisible()
+//
+//          }
+//            else{
+//             let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+//             let defaultAction = UIAlertAction(title: "Retry", style: .cancel, handler: nil)
+//
+//              alertController.addAction(defaultAction)
+//              self.present(alertController, animated: true, completion: nil)
+//        }
+//
+//             }
+//
+//
+//        Auth.auth().signIn(withEmail: emailTextField.text!,
+//                                      password: passwordTextField.text!)
     }
     
     @IBAction func signUpButtonPushed(_ sender: UIButton) {
@@ -172,28 +172,52 @@ extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         
         if let error = error {
-            assertionFailure("Error signing in: \(error.localizedDescription)")
+//            assertionFailure("Error signing in: \(error.localizedDescription)")
+            let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Retry", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+            
             return
         }
-        guard let user = authDataResult?.user
-            else { return }
-        let userRef = Database.database().reference().child("users").child(user.uid)
-        userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
-            if let user = User(snapshot: snapshot) {
-                UserService.show(forUID: user.uid) { (user) in
-                if let user = user {
-                User.setCurrent(user, writeToUserDefaults: true)
-               
-                let initialViewController = UIStoryboard.initialViewController(for: .main)
-                self.view.window?.rootViewController = initialViewController
-                self.view.window?.makeKeyAndVisible()
-                }
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+
+                    if error == nil{
+                    guard let _ = user else {
+                        return
+                    }
+                        guard let user = authDataResult?.user
+                            else { return }
+                        let userRef = Database.database().reference().child("users").child(user.uid)
+                        userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
+                            if let user = User(snapshot: snapshot) {
+                                UserService.show(forUID: user.uid) { (user) in
+                            if let user = user {
+                                User.setCurrent(user, writeToUserDefaults: true)
+                               
+                                let initialViewController = UIStoryboard.initialViewController(for: .main)
+                                self.view.window?.rootViewController = initialViewController
+                                self.view.window?.makeKeyAndVisible()
+                                }
+                                    
+                //                } else {
+                //                self.performSegue(withIdentifier: Constants.Segue.signUpSegue, sender: self)
                     
-//                } else {
-//                self.performSegue(withIdentifier: Constants.Segue.signUpSegue, sender: self)
-    
+                                }
+                        }
+                        })
+                  }
+                    else{
+                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                     let defaultAction = UIAlertAction(title: "Retry", style: .cancel, handler: nil)
+
+                      alertController.addAction(defaultAction)
+                      self.present(alertController, animated: true, completion: nil)
                 }
-        }
-        })
+
+                     }
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!)
+        
+
     }
 }
