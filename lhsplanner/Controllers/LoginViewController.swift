@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
     var postall = [[String: String]]()
     //sign in with textfield ui
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,7 +89,7 @@ class LoginViewController: UIViewController {
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
 
         var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height + 10
+        contentInset.bottom = keyboardFrame.size.height - 8
         scrollView.contentInset = contentInset
     }
 
