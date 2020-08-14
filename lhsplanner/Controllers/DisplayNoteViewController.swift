@@ -31,6 +31,10 @@ class DisplayNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboard()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,7 +55,7 @@ class DisplayNoteViewController: UIViewController {
             note.modificationTime = Date()
 
             CoreDataHelper.saveNote()
-
+            
         case "cancel":
             print("cancel bar button item tapped")
 
@@ -71,5 +75,35 @@ class DisplayNoteViewController: UIViewController {
             contentTextView.text = ""
         }
     }
+    
+    @objc func keyboardWillShow(notification:NSNotification){
+
+        let userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+
+        var contentInset:UIEdgeInsets = self.contentTextView.contentInset
+        contentInset.bottom = keyboardFrame.size.height - 8
+        contentTextView.contentInset = contentInset
+    }
+
+    @objc func keyboardWillHide(notification:NSNotification){
+
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        contentTextView.contentInset = contentInset
+    }
         
+}
+
+//hiding keyboards
+extension UIViewController {
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func keyboardDisappear() {
+        view.endEditing(true)
+    }
 }

@@ -23,12 +23,12 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="taU-Wy-HtI">
-                                <rect key="frame" x="0.0" y="754" width="414" height="38"/>
+                                <rect key="frame" x="0.0" y="754" width="414" height="42"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbs-hW-Qbt">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="42"/>
                                         <color key="backgroundColor" red="0.53322575839999997" green="0.13499386290000001" blue="0.13499386290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="21"/>
                                         <state key="normal" title="Sign up">
                                             <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -37,9 +37,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeL-dd-12n">
-                                        <rect key="frame" x="226.5" y="0.0" width="187.5" height="38"/>
+                                        <rect key="frame" x="226.5" y="0.0" width="187.5" height="42"/>
                                         <color key="backgroundColor" red="0.53322575839999997" green="0.13499386290000001" blue="0.13499386290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="21"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -126,16 +126,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Xle-hj-fV7">
-                                <rect key="frame" x="39" y="140" width="336" height="291.5"/>
+                                <rect key="frame" x="39" y="140" width="336" height="296.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5y-GC-hsw">
-                                        <rect key="frame" x="0.0" y="0.0" width="336" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="26"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="26"/>
                                         <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter school email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hUr-oM-Dfx">
-                                        <rect key="frame" x="0.0" y="57.5" width="336" height="39"/>
+                                        <rect key="frame" x="0.0" y="62.5" width="336" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="3JR-Aj-QEh"/>
                                         </constraints>
@@ -144,7 +144,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UDV-Bu-rPy">
-                                        <rect key="frame" x="0.0" y="122.5" width="336" height="39"/>
+                                        <rect key="frame" x="0.0" y="127.5" width="336" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="Guh-FC-b4r"/>
                                         </constraints>
@@ -153,7 +153,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="re-type password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXZ-6x-phR">
-                                        <rect key="frame" x="0.0" y="187.5" width="336" height="39"/>
+                                        <rect key="frame" x="0.0" y="192.5" width="336" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="7mA-yP-4SG"/>
                                         </constraints>
@@ -162,12 +162,12 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTd-tx-wEh">
-                                        <rect key="frame" x="0.0" y="252.5" width="336" height="39"/>
+                                        <rect key="frame" x="0.0" y="257.5" width="336" height="39"/>
                                         <color key="backgroundColor" red="0.53322575839999997" green="0.13499386290000001" blue="0.13499386290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="KFQ-oH-8qK"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="21"/>
                                         <state key="normal" title="Next">
                                             <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -221,7 +221,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="21"/>
+                            <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="21"/>
                             <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         </textAttributes>
                     </navigationBar>
