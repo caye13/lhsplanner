@@ -20,12 +20,11 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         setUpViews()
-
         
     }
     
@@ -67,11 +66,12 @@ class CreateAccountViewController: UIViewController {
                             
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
-               }
-                    }
-              }
+         }
+            }
+            }
         
     }
     
 }
+
 

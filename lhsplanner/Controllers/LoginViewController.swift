@@ -117,16 +117,15 @@ class LoginViewController: UIViewController {
         }
         
         UserService.create(firUser, email: email) { (user) in
-            guard let _ = user else {
-                return
-            }
-
-            let storyboard = UIStoryboard(name: "Main", bundle: .main)
-
-            if let initialViewController = storyboard.instantiateInitialViewController() {
-                self.view.window?.rootViewController = initialViewController
-                self.view.window?.makeKeyAndVisible()
-            }
+        guard let user = user else {
+            return
+        }
+            
+        User.setCurrent(user)
+            
+        let initialViewController = UIStoryboard.initialViewController(for: .main)
+        self.view.window?.rootViewController = initialViewController
+        self.view.window?.makeKeyAndVisible()
         }
         //
 //        guard let authUI = FUIAuth.defaultAuthUI()
@@ -192,13 +191,12 @@ extension LoginViewController: FUIAuthDelegate {
         let userRef = Database.database().reference().child("users").child(user.uid)
         userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
             if let _ = User(snapshot: snapshot) {
-              //  User.setCurrent(user)
+      //          User.setCurrent(user)
                 
-                let storyboard = UIStoryboard(name: "Main", bundle: .main)
-                if let initialViewController = storyboard.instantiateInitialViewController() {
-                    self.view.window?.rootViewController = initialViewController
-                    self.view.window?.makeKeyAndVisible()
-                }
+                let initialViewController = UIStoryboard.initialViewController(for: .main)
+                self.view.window?.rootViewController = initialViewController
+                self.view.window?.makeKeyAndVisible()
+                
             } else {
                 self.performSegue(withIdentifier: "signUpSegue", sender: self)
             }
