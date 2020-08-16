@@ -23,6 +23,7 @@ struct UserService {
         })
     }
 
+    // identifying users by creating user per email account created
     static func create(_ firUser: FIRUser, email: String, completion: @escaping (User?) -> Void) {
         let userAttrs = ["email": email]
 

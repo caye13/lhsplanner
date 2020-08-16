@@ -11,6 +11,6 @@ import FirebaseStorage
 
 //struct StorageService {
 //    private static func uploadNotes(for notes: Note, at reference: StorageReference, success: @escaping (String) -> Void) {
-//
+
 //    }
 

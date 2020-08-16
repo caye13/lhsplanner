@@ -35,6 +35,7 @@ class User: Codable {
         }
         return currentUser
     }
+    // current user for user signed in
     static func setCurrent(_ user: User, writeToUserDefaults: Bool = false) {
         if writeToUserDefaults {
             if let data = try? JSONEncoder().encode(user) {
