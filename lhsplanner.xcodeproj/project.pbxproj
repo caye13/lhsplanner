@@ -16,7 +16,6 @@
 		60A3902624E64EB00082CB9C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3902524E64EB00082CB9C /* UserService.swift */; };
 		60A3902B24E6F2760082CB9C /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3902A24E6F2760082CB9C /* CoreDataHelper.swift */; };
 		60A3902E24E704F20082CB9C /* Note.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60A3902C24E704F20082CB9C /* Note.xcdatamodeld */; };
-		60AF752924E8BDC5001CC50B /* NavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AF752824E8BDC5001CC50B /* NavigationTitle.swift */; };
 		60C0FDD424E598D7002EE8CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0FDD324E598D7002EE8CA /* Constants.swift */; };
 		60C0FDD624E59A5C002EE8CA /* StoryboardAndUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0FDD524E59A5C002EE8CA /* StoryboardAndUtility.swift */; };
 		60C0FDDA24E5B3AD002EE8CA /* ListNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0FDD924E5B3AD002EE8CA /* ListNotesTableViewController.swift */; };
@@ -43,7 +42,6 @@
 		60A3902524E64EB00082CB9C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		60A3902A24E6F2760082CB9C /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		60A3902D24E704F20082CB9C /* Note.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Note.xcdatamodel; sourceTree = "<group>"; };
-		60AF752824E8BDC5001CC50B /* NavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitle.swift; sourceTree = "<group>"; };
 		60C0FDD324E598D7002EE8CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		60C0FDD524E59A5C002EE8CA /* StoryboardAndUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardAndUtility.swift; sourceTree = "<group>"; };
 		60C0FDD924E5B3AD002EE8CA /* ListNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNotesTableViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				60C0FDDD24E5E594002EE8CA /* ListNotesTableViewCell.swift */,
-				60AF752824E8BDC5001CC50B /* NavigationTitle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,7 +334,6 @@
 			files = (
 				601EEF0224E44BF500F64E6F /* CreateAccountViewController.swift in Sources */,
 				60A3902024E601470082CB9C /* DateToString.swift in Sources */,
-				60AF752924E8BDC5001CC50B /* NavigationTitle.swift in Sources */,
 				60A3902B24E6F2760082CB9C /* CoreDataHelper.swift in Sources */,
 				60C2284024E2401C00F065CA /* LoginViewController.swift in Sources */,
 				60C2282024E239EC00F065CA /* AppDelegate.swift in Sources */,
