@@ -8,6 +8,7 @@
 
 import Foundation
 
+// date/time/etc for modificationtime
 extension Date {
     func convertToString() -> String {
         return DateFormatter.localizedString(from: self, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.medium)
