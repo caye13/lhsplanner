@@ -32,11 +32,13 @@ class DisplayNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //hide keyboard and scrolling when keyboard is present
         self.hideKeyboard()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    //segues back to home and items in navigation functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
 
@@ -64,6 +66,7 @@ class DisplayNoteViewController: UIViewController {
         }
     }
     
+    // show note title and content when path is clicked on
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let note = note {
