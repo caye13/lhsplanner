@@ -16,6 +16,7 @@
 		60A3902624E64EB00082CB9C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3902524E64EB00082CB9C /* UserService.swift */; };
 		60A3902B24E6F2760082CB9C /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A3902A24E6F2760082CB9C /* CoreDataHelper.swift */; };
 		60A3902E24E704F20082CB9C /* Note.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60A3902C24E704F20082CB9C /* Note.xcdatamodeld */; };
+		60AF752B24E9D05A001CC50B /* CompletedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AF752A24E9D05A001CC50B /* CompletedService.swift */; };
 		60C0FDD424E598D7002EE8CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0FDD324E598D7002EE8CA /* Constants.swift */; };
 		60C0FDD624E59A5C002EE8CA /* StoryboardAndUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0FDD524E59A5C002EE8CA /* StoryboardAndUtility.swift */; };
 		60C0FDDA24E5B3AD002EE8CA /* ListNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0FDD924E5B3AD002EE8CA /* ListNotesTableViewController.swift */; };
@@ -42,6 +43,7 @@
 		60A3902524E64EB00082CB9C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		60A3902A24E6F2760082CB9C /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		60A3902D24E704F20082CB9C /* Note.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Note.xcdatamodel; sourceTree = "<group>"; };
+		60AF752A24E9D05A001CC50B /* CompletedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedService.swift; sourceTree = "<group>"; };
 		60C0FDD324E598D7002EE8CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		60C0FDD524E59A5C002EE8CA /* StoryboardAndUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardAndUtility.swift; sourceTree = "<group>"; };
 		60C0FDD924E5B3AD002EE8CA /* ListNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNotesTableViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				60A3902124E60DFB0082CB9C /* StorageService.swift */,
 				60A3902524E64EB00082CB9C /* UserService.swift */,
+				60AF752A24E9D05A001CC50B /* CompletedService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				60C0FDD624E59A5C002EE8CA /* StoryboardAndUtility.swift in Sources */,
 				60C0FDD424E598D7002EE8CA /* Constants.swift in Sources */,
 				60A3902E24E704F20082CB9C /* Note.xcdatamodeld in Sources */,
+				60AF752B24E9D05A001CC50B /* CompletedService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
