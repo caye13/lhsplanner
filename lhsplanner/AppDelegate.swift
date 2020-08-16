@@ -19,11 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         configureInitialRootViewController(for: window)
         
-//        let initialViewController = UIStoryboard.initialViewController(for: .login)
-//
-//            window?.rootViewController = initialViewController
-//            window?.makeKeyAndVisible()
-        
         return true
     }
     //keeping users logged in
@@ -82,7 +77,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 
 }
 
