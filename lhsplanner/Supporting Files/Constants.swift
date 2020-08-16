@@ -9,9 +9,11 @@
 import Foundation
 
 struct Constants {
+    
     struct Segue {
         static let signUpSegue = "signUpSegue"
     }
+    
     struct UserDefaults {
         static let currentUser = "currentUser"
     }
