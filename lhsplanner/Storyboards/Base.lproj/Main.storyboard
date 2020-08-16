@@ -24,16 +24,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Pwc-cS-xSr">
-                                            <rect key="frame" x="36" y="11" width="342" height="56"/>
+                                            <rect key="frame" x="59" y="11" width="319" height="56"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMn-00-Kgk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="24"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="24"/>
                                                     <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="18"/>
                                                     <color key="textColor" red="0.59415876869999995" green="0.71930503850000005" blue="0.94905012850000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Modified Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tw2-l7-lcY">
-                                                    <rect key="frame" x="0.0" y="32" width="342" height="24"/>
+                                                    <rect key="frame" x="0.0" y="32" width="319" height="24"/>
                                                     <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="18"/>
                                                     <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -43,12 +43,21 @@
                                                 <constraint firstItem="Tw2-l7-lcY" firstAttribute="height" secondItem="MMn-00-Kgk" secondAttribute="height" id="Ky7-8v-B46"/>
                                             </constraints>
                                         </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrK-Wv-QVI">
+                                            <rect key="frame" x="8" y="26" width="43" height="26"/>
+                                            <state key="normal" title="Button" image="circle" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="FrK-Wv-QVI" firstAttribute="leading" secondItem="Wat-YG-L0C" secondAttribute="leading" constant="8" id="5R2-V9-Xyh"/>
+                                        <constraint firstItem="FrK-Wv-QVI" firstAttribute="top" secondItem="Wat-YG-L0C" secondAttribute="top" constant="26" id="CIq-ad-Sf9"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Pwc-cS-xSr" secondAttribute="trailing" constant="16" id="Jni-oW-L16"/>
+                                        <constraint firstAttribute="bottom" secondItem="FrK-Wv-QVI" secondAttribute="bottom" constant="26" id="VO5-Ti-SiY"/>
                                         <constraint firstItem="Pwc-cS-xSr" firstAttribute="top" secondItem="Wat-YG-L0C" secondAttribute="topMargin" id="bHY-MM-1zr"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Pwc-cS-xSr" secondAttribute="bottom" id="dTw-J4-zeF"/>
-                                        <constraint firstItem="Pwc-cS-xSr" firstAttribute="leading" secondItem="Wat-YG-L0C" secondAttribute="leadingMargin" constant="16" id="stg-Id-fVJ"/>
+                                        <constraint firstItem="Pwc-cS-xSr" firstAttribute="leading" secondItem="Wat-YG-L0C" secondAttribute="leadingMargin" constant="39" id="stg-Id-fVJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -159,4 +168,7 @@
         <segue reference="7FT-lV-97o"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
