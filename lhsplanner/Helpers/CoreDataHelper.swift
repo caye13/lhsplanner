@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 struct CoreDataHelper {
+    //app delegate to get or use coredata
     static let context: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError()
@@ -21,6 +22,7 @@ struct CoreDataHelper {
         return context
     }()
     
+    //note functions
     static func newNote() -> Note {
             let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context) as! Note
 

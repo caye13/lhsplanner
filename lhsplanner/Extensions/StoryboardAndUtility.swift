@@ -22,6 +22,7 @@ extension UIStoryboard {
         self.init(name: type.filename, bundle: bundle)
     }
     
+    // way of setting initial viewcontroller for users
     static func initialViewController(for type: StoryType) -> UIViewController {
         let storyboard = UIStoryboard(type: type)
         guard let initialViewController = storyboard.instantiateInitialViewController() else {
