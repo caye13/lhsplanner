@@ -9,8 +9,6 @@
 import UIKit
 import FirebaseDatabase.FIRDataSnapshot
 
-
-//
 //class UserData: Codable {
 //
 //    private static var _current: UserData?
