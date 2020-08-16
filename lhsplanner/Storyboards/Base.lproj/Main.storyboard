@@ -97,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="-575.36231884057975" y="-398.4375"/>
         </scene>
-        <!--Title-->
+        <!--Display Note View Controller-->
         <scene sceneID="8SW-RA-Y7b">
             <objects>
                 <viewController id="S3z-41-Y3h" customClass="DisplayNoteViewController" customModule="lhsplanner" customModuleProvider="target" sceneMemberID="viewController">
@@ -132,7 +132,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QYi-Ri-mKI"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="9p9-JZ-7Kz">
+                    <navigationItem key="navigationItem" id="9p9-JZ-7Kz">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="igz-iD-OIM">
                             <connections>
                                 <segue destination="u6l-n5-EjB" kind="unwind" identifier="cancel" unwindAction="unwindWithSegue:" id="WJm-3Z-vSy"/>

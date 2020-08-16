@@ -32,8 +32,7 @@ class DisplayNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var title = titleTextField.text
-        
+        var title = titleTextField.text ?? ""
         self.navigationItem.title = title
             
         //hide keyboard and scrolling when keyboard is present
