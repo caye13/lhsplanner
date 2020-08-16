@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
+    //connect coredata
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -64,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
     
+    //core data, saves data
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -80,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// user default: user stays signed in
 extension AppDelegate {
     func configureInitialRootViewController(for window: UIWindow?) {
         let defaults = UserDefaults.standard
