@@ -19,7 +19,16 @@ class ListNotesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        let dateTimeString = formatter.string(from: date)
+        
+        self.navigationItem.title = dateTimeString
+
+        
         notes = CoreDataHelper.retrieveNotes()
+        
 
     }
     
@@ -74,3 +83,4 @@ class ListNotesTableViewController: UITableViewController {
     }
     
 }
+
