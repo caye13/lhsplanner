@@ -23,10 +23,12 @@ class ListNotesTableViewController: UITableViewController {
 
     }
     
+    //number of notes
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes.count
     }
     
+    // display note
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
 
@@ -37,6 +39,7 @@ class ListNotesTableViewController: UITableViewController {
        return cell
    }
     
+    // display note, new note
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
 
@@ -55,6 +58,7 @@ class ListNotesTableViewController: UITableViewController {
         }
     }
     
+    // deleting notes
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let noteToDelete = notes[indexPath.row]
@@ -64,6 +68,7 @@ class ListNotesTableViewController: UITableViewController {
         }
     }
     
+    // get notes from coredata
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
         notes = CoreDataHelper.retrieveNotes()
     }

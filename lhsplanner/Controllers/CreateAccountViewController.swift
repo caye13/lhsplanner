@@ -22,6 +22,7 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        //dismiss keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
@@ -51,6 +52,7 @@ class CreateAccountViewController: UIViewController {
             
         } else {
             
+            //create user, sets as current user
             Auth.auth().createUser(withEmail: enterEmailTextField.text!, password: enterPasswordTextField.text!){ (user, error) in
                 if error == nil {
                     //go to main view controller
