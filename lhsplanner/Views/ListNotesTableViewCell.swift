@@ -13,15 +13,17 @@ class ListNotesTableViewCell: UITableViewCell {
     @IBOutlet weak var noteTitleLabel: UILabel!
     @IBOutlet weak var noteModificationTimeLabel: UILabel!
     
+    var buttonPush:Bool = true
+
     @IBOutlet weak var button: UIButton!
-//    {
-//        didSet{
-//        let image = UIImage(named: imageColor[randNum])
-//        tapButton.setImage(image, forState: UIControlState.Normal)
-//        }
-//    }
     
     @IBAction func buttonPushed(_ sender: UIButton) {
+        buttonPush = !buttonPush
+        if buttonPush {
+            button.setImage(UIImage(named: "checkmark.circle.fill"), for: .normal)
+        } else {
+            button.setImage(UIImage(named: "circle"), for: .normal)
+        }
     }
     
 }
