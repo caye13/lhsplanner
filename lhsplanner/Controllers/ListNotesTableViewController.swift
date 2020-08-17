@@ -39,7 +39,8 @@ class ListNotesTableViewController: UITableViewController {
     
     // display note
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//put button here!
+//put button function here here!
+    
        let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
 
        let note = notes[indexPath.row]

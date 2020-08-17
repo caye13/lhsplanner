@@ -14,7 +14,9 @@ class ListNotesTableViewCell: UITableViewCell {
     @IBOutlet weak var noteModificationTimeLabel: UILabel!
     
     var buttonPush:Bool = true
-
+    
+    
+//put button here functions in the controller
 //    @IBOutlet weak var button: UIButton!
 //    
 //    @IBAction func buttonPushed(_ sender: UIButton) {
@@ -24,6 +26,6 @@ class ListNotesTableViewCell: UITableViewCell {
 //        } else {
 //            button.setImage(UIImage(named: "circle.png"), for: .normal)
 //        }
-    }
+//    }
     
 }
