@@ -20,9 +20,9 @@ class ListNotesTableViewCell: UITableViewCell {
     @IBAction func buttonPushed(_ sender: UIButton) {
         buttonPush = !buttonPush
         if buttonPush {
-            button.setImage(UIImage(named: "checkmark.circle.fill"), for: .normal)
-        } else {
             button.setImage(UIImage(named: "circle"), for: .normal)
+        } else {
+            button.setImage(UIImage(named: "checkmark.circle"), for: .normal)
         }
     }
     
