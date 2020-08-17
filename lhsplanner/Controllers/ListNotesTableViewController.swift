@@ -39,14 +39,13 @@ class ListNotesTableViewController: UITableViewController {
     
     // display note
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//put button function here here!
     
        let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
 
        let note = notes[indexPath.row]
        cell.noteTitleLabel.text = note.title
        cell.noteModificationTimeLabel.text = note.modificationTime?.convertToString() ?? "unknown"
-//       cell.completeButton = false
+//       cell.completeButton =
 
        return cell
    }
