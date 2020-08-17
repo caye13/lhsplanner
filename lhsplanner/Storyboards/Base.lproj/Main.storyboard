@@ -48,9 +48,6 @@
                                             <state key="normal">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                             </state>
-                                            <connections>
-                                                <action selector="buttonPushed:" destination="llv-Oy-hZF" eventType="touchUpInside" id="k3R-2p-cVz"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -82,9 +79,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="button" destination="FrK-Wv-QVI" id="08Y-7q-HBM"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g61-G0-Guc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
