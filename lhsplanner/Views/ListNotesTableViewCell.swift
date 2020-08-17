@@ -15,9 +15,9 @@ class ListNotesTableViewCell: UITableViewCell {
     
     var buttonPush:Bool = true
 
-    @IBOutlet weak var button: UIButton!
-    
-    @IBAction func buttonPushed(_ sender: UIButton) {
+//    @IBOutlet weak var button: UIButton!
+//    
+//    @IBAction func buttonPushed(_ sender: UIButton) {
 //        buttonPush = !buttonPush
 //        if buttonPush {
 //            button.setImage(UIImage(named: "checkmark.circle.png"), for: .normal)

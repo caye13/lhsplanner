@@ -49,7 +49,7 @@
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                             </state>
                                             <connections>
-                                                <action selector="buttonPushed:" destination="fT7-SC-0Fg" eventType="touchUpInside" id="xHQ-F3-Enb"/>
+                                                <action selector="buttonPushed:" destination="llv-Oy-hZF" eventType="touchUpInside" id="k3R-2p-cVz"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -64,7 +64,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="button" destination="FrK-Wv-QVI" id="LAA-5c-CTi"/>
                                     <outlet property="noteModificationTimeLabel" destination="Tw2-l7-lcY" id="S4B-lN-2l9"/>
                                     <outlet property="noteTitleLabel" destination="MMn-00-Kgk" id="WlH-v9-hcF"/>
                                     <segue destination="S3z-41-Y3h" kind="show" identifier="displayNote" id="rWX-N0-NfQ"/>
@@ -83,6 +82,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="button" destination="FrK-Wv-QVI" id="08Y-7q-HBM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g61-G0-Guc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
