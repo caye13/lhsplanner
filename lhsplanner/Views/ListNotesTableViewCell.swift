@@ -15,17 +15,17 @@ class ListNotesTableViewCell: UITableViewCell {
     
     var buttonPush:Bool = true
     
+    @IBOutlet weak var completeButton: UIButton!
+    @IBAction func completeButtonPushed(_ sender: UIButton) {
+        buttonPush = !buttonPush
+        if buttonPush {
+            completeButton.setImage(UIImage(named: "checkmark.circle"), for: .normal)
+        } else {
+            completeButton.setImage(UIImage(named: "circle"), for: .normal)
+        }
+    }
+    
     
 //put button here functions in the controller
-//    @IBOutlet weak var button: UIButton!
-//    
-//    @IBAction func buttonPushed(_ sender: UIButton) {
-//        buttonPush = !buttonPush
-//        if buttonPush {
-//            button.setImage(UIImage(named: "checkmark.circle.png"), for: .normal)
-//        } else {
-//            button.setImage(UIImage(named: "circle.png"), for: .normal)
-//        }
-//    }
     
 }

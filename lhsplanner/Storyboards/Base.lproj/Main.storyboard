@@ -48,6 +48,9 @@
                                             <state key="normal">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                             </state>
+                                            <connections>
+                                                <action selector="completeButtonPushed:" destination="fT7-SC-0Fg" eventType="touchUpInside" id="xNG-ic-8T4"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -61,6 +64,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="completeButton" destination="FrK-Wv-QVI" id="Wxe-E6-JfA"/>
                                     <outlet property="noteModificationTimeLabel" destination="Tw2-l7-lcY" id="S4B-lN-2l9"/>
                                     <outlet property="noteTitleLabel" destination="MMn-00-Kgk" id="WlH-v9-hcF"/>
                                     <segue destination="S3z-41-Y3h" kind="show" identifier="displayNote" id="rWX-N0-NfQ"/>
