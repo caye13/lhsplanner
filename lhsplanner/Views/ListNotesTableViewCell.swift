@@ -18,12 +18,12 @@ class ListNotesTableViewCell: UITableViewCell {
     @IBOutlet weak var button: UIButton!
     
     @IBAction func buttonPushed(_ sender: UIButton) {
-        buttonPush = !buttonPush
-        if buttonPush {
-            button.setImage(UIImage(named: "circle"), for: .normal)
-        } else {
-            button.setImage(UIImage(named: "checkmark.circle"), for: .normal)
-        }
+//        buttonPush = !buttonPush
+//        if buttonPush {
+//            button.setImage(UIImage(named: "checkmark.circle.png"), for: .normal)
+//        } else {
+//            button.setImage(UIImage(named: "circle.png"), for: .normal)
+//        }
     }
     
 }
