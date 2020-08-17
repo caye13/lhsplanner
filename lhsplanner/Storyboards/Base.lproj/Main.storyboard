@@ -48,6 +48,9 @@
                                             <state key="normal" title="Button" image="circle" catalog="system">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                             </state>
+                                            <connections>
+                                                <action selector="buttonPushed:" destination="fT7-SC-0Fg" eventType="touchUpInside" id="xHQ-F3-Enb"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -61,6 +64,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="button" destination="FrK-Wv-QVI" id="LAA-5c-CTi"/>
                                     <outlet property="noteModificationTimeLabel" destination="Tw2-l7-lcY" id="S4B-lN-2l9"/>
                                     <outlet property="noteTitleLabel" destination="MMn-00-Kgk" id="WlH-v9-hcF"/>
                                     <segue destination="S3z-41-Y3h" kind="show" identifier="displayNote" id="rWX-N0-NfQ"/>
@@ -82,7 +86,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g61-G0-Guc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="334.78260869565219" y="-398.4375"/>
+            <point key="canvasLocation" x="212" y="-442"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rHh-iB-cQv">

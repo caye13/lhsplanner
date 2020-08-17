@@ -16,6 +16,7 @@ class DisplayNoteViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
     
+    
 //    func saveNote() {
 //        let title = titleTextField.text
 //        let content = contentTextView.text
@@ -98,7 +99,7 @@ class DisplayNoteViewController: UIViewController {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         contentTextView.contentInset = contentInset
     }
-        
+    
 }
 
 //hiding keyboards
@@ -112,4 +113,5 @@ extension UIViewController {
     @objc func keyboardDisappear() {
         view.endEditing(true)
     }
+    
 }
