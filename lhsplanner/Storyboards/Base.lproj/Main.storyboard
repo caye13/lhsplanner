@@ -45,7 +45,7 @@
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrK-Wv-QVI">
                                             <rect key="frame" x="8" y="26" width="43" height="26"/>
-                                            <state key="normal" image="circle" catalog="system">
+                                            <state key="normal">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                             </state>
                                             <connections>
@@ -172,7 +172,4 @@
         <segue reference="7FT-lV-97o"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-    <resources>
-        <image name="circle" catalog="system" width="128" height="121"/>
-    </resources>
 </document>

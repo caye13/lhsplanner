@@ -6,11 +6,14 @@
 //  Copyright © 2020 caye. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import FirebaseDatabase
 
-//struct CompletedService {
+struct CompletedService {
 //    static func create() {
 //
 //    }
-//}
+}
+
+
