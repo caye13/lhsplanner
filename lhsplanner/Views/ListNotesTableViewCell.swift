@@ -19,9 +19,9 @@ class ListNotesTableViewCell: UITableViewCell {
     @IBAction func completeButtonPushed(_ sender: UIButton) {
         buttonPush = !buttonPush
         if buttonPush {
-            completeButton.setImage(UIImage(named: "checkmark.circle"), for: .normal)
+            completeButton.setImage(UIImage(named: "button_complete_solid"), for: .normal)
         } else {
-            completeButton.setImage(UIImage(named: "circle"), for: .normal)
+            completeButton.setImage(UIImage(named: "button_complete_outline"), for: .normal)
         }
     }
     

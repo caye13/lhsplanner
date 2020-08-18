@@ -43,10 +43,10 @@
                                                 <constraint firstItem="Tw2-l7-lcY" firstAttribute="height" secondItem="MMn-00-Kgk" secondAttribute="height" id="Ky7-8v-B46"/>
                                             </constraints>
                                         </stackView>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrK-Wv-QVI">
-                                            <rect key="frame" x="8" y="26" width="43" height="26"/>
-                                            <state key="normal">
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrK-Wv-QVI">
+                                            <rect key="frame" x="16" y="0.0" width="27" height="78"/>
+                                            <state key="normal" image="button_complete_outline">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                             </state>
                                             <connections>
                                                 <action selector="completeButtonPushed:" destination="fT7-SC-0Fg" eventType="touchUpInside" id="xNG-ic-8T4"/>
@@ -54,13 +54,14 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="FrK-Wv-QVI" firstAttribute="leading" secondItem="Wat-YG-L0C" secondAttribute="leading" constant="8" id="5R2-V9-Xyh"/>
-                                        <constraint firstItem="FrK-Wv-QVI" firstAttribute="top" secondItem="Wat-YG-L0C" secondAttribute="top" constant="26" id="CIq-ad-Sf9"/>
+                                        <constraint firstItem="Pwc-cS-xSr" firstAttribute="leading" secondItem="FrK-Wv-QVI" secondAttribute="trailing" constant="16" id="6Q7-je-EON"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Pwc-cS-xSr" secondAttribute="trailing" constant="16" id="Jni-oW-L16"/>
-                                        <constraint firstAttribute="bottom" secondItem="FrK-Wv-QVI" secondAttribute="bottom" constant="26" id="VO5-Ti-SiY"/>
+                                        <constraint firstItem="FrK-Wv-QVI" firstAttribute="leading" secondItem="Wat-YG-L0C" secondAttribute="leading" constant="16" id="JrU-aq-8Zs"/>
+                                        <constraint firstAttribute="bottom" secondItem="FrK-Wv-QVI" secondAttribute="bottom" id="TR9-Ta-KqD"/>
                                         <constraint firstItem="Pwc-cS-xSr" firstAttribute="top" secondItem="Wat-YG-L0C" secondAttribute="topMargin" id="bHY-MM-1zr"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Pwc-cS-xSr" secondAttribute="bottom" id="dTw-J4-zeF"/>
                                         <constraint firstItem="Pwc-cS-xSr" firstAttribute="leading" secondItem="Wat-YG-L0C" secondAttribute="leadingMargin" constant="39" id="stg-Id-fVJ"/>
+                                        <constraint firstItem="FrK-Wv-QVI" firstAttribute="top" secondItem="Wat-YG-L0C" secondAttribute="top" id="xo1-W4-fhm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -172,4 +173,7 @@
         <segue reference="7FT-lV-97o"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+    <resources>
+        <image name="button_complete_outline" width="24" height="24"/>
+    </resources>
 </document>
