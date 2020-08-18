@@ -24,8 +24,4 @@ class ListNotesTableViewCell: UITableViewCell {
             completeButton.setImage(UIImage(named: "button_complete_outline"), for: .normal)
         }
     }
-    
-    
-//put button here functions in the controller
-    
 }
