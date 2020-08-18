@@ -13,7 +13,7 @@ class ListNotesTableViewCell: UITableViewCell {
     @IBOutlet weak var noteTitleLabel: UILabel!
     @IBOutlet weak var noteModificationTimeLabel: UILabel!
     
-    var buttonPush:Bool = true
+    var buttonPush: Bool = true
     
     @IBOutlet weak var completeButton: UIButton!
     @IBAction func completeButtonPushed(_ sender: UIButton) {

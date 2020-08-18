@@ -43,6 +43,14 @@ struct CoreDataHelper {
         saveNote()
     }
     
+    static func saveCompleteButton() {
+        do {
+            try context.save()
+        } catch let error {
+            print("error")
+        }
+    }
+        
     static func retrieveNotes() -> [Note] {
         do {
             let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
@@ -55,4 +63,5 @@ struct CoreDataHelper {
             return []
         }
     }
+    
 }

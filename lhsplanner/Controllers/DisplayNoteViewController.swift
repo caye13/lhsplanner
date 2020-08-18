@@ -51,6 +51,7 @@ class DisplayNoteViewController: UIViewController {
             note?.title = titleTextField.text ?? ""
             note?.content = contentTextView.text ?? ""
             note?.modificationTime = Date()
+            note?.completedButton = Bool()
 
             CoreDataHelper.saveNote()
 
@@ -59,6 +60,7 @@ class DisplayNoteViewController: UIViewController {
             note.title = titleTextField.text ?? ""
             note.content = contentTextView.text ?? ""
             note.modificationTime = Date()
+            note.completedButton = Bool()
 
             CoreDataHelper.saveNote()
             
