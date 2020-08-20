@@ -21,11 +21,11 @@ class ListNotesTableViewCell: UITableViewCell {
         if buttonPush {
             completeButton.setImage(UIImage(named: "button_complete_solid"), for: .normal)
             
-            CoreDataHelper.saveCompleteButton()
+            CoreDataHelper.saveNote()
         } else {
             completeButton.setImage(UIImage(named: "button_complete_outline"), for: .normal)
             
-            CoreDataHelper.saveCompleteButton()
+            CoreDataHelper.saveNote()
         }
     }
 }

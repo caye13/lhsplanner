@@ -43,13 +43,13 @@ struct CoreDataHelper {
         saveNote()
     }
     
-    static func saveCompleteButton() {
-        do {
-            try context.save()
-        } catch let error {
-            print("error")
-        }
-    }
+//    static func saveCompleteButton() {
+//        do {
+//            try context.save()
+//        } catch let error {
+//            print("error")
+//        }
+//    }
         
     static func retrieveNotes() -> [Note] {
         do {

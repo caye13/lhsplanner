@@ -45,7 +45,7 @@ class ListNotesTableViewController: UITableViewController {
        let note = notes[indexPath.row]
        cell.noteTitleLabel.text = note.title
        cell.noteModificationTimeLabel.text = note.modificationTime?.convertToString() ?? "unknown"
-//    cell.buttonPush = .self
+       cell.buttonPush = note.completedButton
 
        return cell
    }
@@ -83,6 +83,7 @@ class ListNotesTableViewController: UITableViewController {
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
         notes = CoreDataHelper.retrieveNotes()
     }
+    
     
     
 }
