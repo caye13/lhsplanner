@@ -51,9 +51,6 @@ class DisplayNoteViewController: UIViewController {
             note?.title = titleTextField.text ?? ""
             note?.content = contentTextView.text ?? ""
             note?.modificationTime = Date()
-            //connect this with completeButtonPushed so it can save the value of if its true or false
-            //maybe create a new func to save status of bool check coredata helper
-//            note?.completedButton = Bool()
 
             CoreDataHelper.saveNote()
 
@@ -62,7 +59,6 @@ class DisplayNoteViewController: UIViewController {
             note.title = titleTextField.text ?? ""
             note.content = contentTextView.text ?? ""
             note.modificationTime = Date()
-//            note.completedButton = Bool()
 
             CoreDataHelper.saveNote()
             

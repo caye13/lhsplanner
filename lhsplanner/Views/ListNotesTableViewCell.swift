@@ -20,8 +20,12 @@ class ListNotesTableViewCell: UITableViewCell {
         buttonPush = !buttonPush
         if buttonPush {
             completeButton.setImage(UIImage(named: "button_complete_solid"), for: .normal)
+            
+            CoreDataHelper.saveCompleteButton()
         } else {
             completeButton.setImage(UIImage(named: "button_complete_outline"), for: .normal)
+            
+            CoreDataHelper.saveCompleteButton()
         }
     }
 }
