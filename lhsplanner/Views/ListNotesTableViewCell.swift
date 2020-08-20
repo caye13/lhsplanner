@@ -16,16 +16,18 @@ class ListNotesTableViewCell: UITableViewCell {
     var buttonPush: Bool = true
     
     @IBOutlet weak var completeButton: UIButton!
+    // find an alternative for inout swift
+    //put button push Bool in parameter
     @IBAction func completeButtonPushed(_ sender: UIButton) {
         buttonPush = !buttonPush
         if buttonPush {
             completeButton.setImage(UIImage(named: "button_complete_solid"), for: .normal)
             
-            CoreDataHelper.saveNote()
+            CoreDataHelper.saveCompleteButton()
         } else {
             completeButton.setImage(UIImage(named: "button_complete_outline"), for: .normal)
             
-            CoreDataHelper.saveNote()
+            CoreDataHelper.saveCompleteButton()
         }
     }
 }
